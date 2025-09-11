@@ -51,6 +51,11 @@ html
     background-color: #2E4D32;
 }
 
+#box6
+{
+    background-color: #375B6C;
+}
+
 p
 {
     font-size: 16px;
@@ -96,6 +101,12 @@ a:hover
 {
     text-decoration: none;
     color: #CED3DC;
+}
+
+nav a
+{
+    text-decoration: none;
+    color: #375B6C;
 }
 
 nav a:visited
