@@ -103,19 +103,19 @@ a:hover
     color: #CED3DC;
 }
 
-nav a
+nav a:visited
 {
     text-decoration: none;
     color: #375B6C;
 }
 
-nav a:visited
+nav a
 {
     color: #14110F;
 }
 
 nav a:hover
 {
-    text-decoration: none;
+    text-decoration: underline;
     color: #2E4D32;
 }
