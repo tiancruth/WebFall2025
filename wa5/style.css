@@ -1,0 +1,158 @@
+
+body
+{
+    background-color: #F3F0E9;
+}
+
+.main-nav
+{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-brand
+{
+    color: white;
+    font-size: 24px;
+    padding: 0.5rem;
+    margin-left: 1rem;
+}
+
+.nav-menu
+{
+    display: flex;
+    gap: 1rem;
+}
+
+button
+{
+    width: 10rem;
+    height: 3rem;
+    border-radius: 20%;
+    border: 2px #CFB87C solid;
+}
+
+html
+{
+    font-family: "nimbus-sans-extended", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#box1
+{
+    background-color: #F3F0E9;
+}
+
+#box2
+{
+    background-color: black;
+}
+
+#box3
+{
+    background-color: #CFB87C;
+}
+
+#box4
+{
+    background-color: #565A5C;
+}
+
+#box5
+{
+    background-color: #A2A4A3;
+}
+
+#box6
+{
+    background-color: #0A3758;
+}
+
+#box7
+{
+    background-color: #8D7334;
+}
+
+#box8
+{
+    background-color: #096FAE;
+}
+
+#box9
+{
+    background-color: #EEF5F8;
+}
+
+p
+{
+    font-size: 16px;
+    color: black;
+}
+
+.small-text
+{
+    font-size: 12px;
+    color: black;
+}
+
+h3
+{
+    font-size: 20px;
+    color: black;
+}
+
+h2
+{
+    font-size: 24px;
+    color: black;
+}
+
+h1
+{
+    font-size: 28px;
+    color: black;
+}
+
+a:visited
+{
+    color: black;
+}
+
+a
+{
+    text-decoration: none;
+    color: #0A3758;
+}
+
+a:hover
+{
+    text-decoration: none;
+    color: #CFB87C;
+}
+
+nav a:visited
+{
+    text-decoration: none;
+    color: #375B6C;
+}
+
+nav a
+{
+    color: #096FAE;
+}
+
+nav a:hover
+{
+    text-decoration: underline;
+    color: #CFB87C;
+}
+
+@media (max-width: 768px)
+{
+    .nav-brand
+    {
+        align-self: center;
+    }
+}
