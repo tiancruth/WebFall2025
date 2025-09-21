@@ -2,6 +2,8 @@
 body
 {
     background-color: #F3F0E9;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-nav
@@ -15,8 +17,7 @@ body
 {
     color: white;
     font-size: 24px;
-    padding: 0.5rem;
-    margin-left: 1rem;
+    align-self: center;
 }
 
 .nav-menu
@@ -25,6 +26,7 @@ body
     gap: 1rem;
 }
 
+/*
 button
 {
     width: 10rem;
@@ -32,10 +34,46 @@ button
     border-radius: 20%;
     border: 2px #CFB87C solid;
 }
+*/
+
+.main-nav ul
+{
+    list-style: none;
+}
+
+.nav-menu a
+{
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .5s, color .5s, border .5s;
+   
+}
+
+.nav-menu a:hover
+{
+    background-color: #CFB87C;
+    color: black;
+    border: 2px solid black;
+}
+
+.nav-toggle
+{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    margin: 20px;
+}
+
+
 
 html
 {
-    font-family: "nimbus-sans-extended", sans-serif;
+    font-family: helvetica-neue-lt-pro, sans-serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -115,44 +153,82 @@ h1
     color: black;
 }
 
-a:visited
+nav a
 {
-    color: black;
-}
-
-a
-{
-    text-decoration: none;
-    color: #0A3758;
-}
-
-a:hover
-{
-    text-decoration: none;
+    width: 100%;
     color: #CFB87C;
 }
 
 nav a:visited
 {
-    text-decoration: none;
-    color: #375B6C;
-}
-
-nav a
-{
-    color: #096FAE;
-}
-
-nav a:hover
-{
-    text-decoration: underline;
+    width: 100%;
     color: #CFB87C;
 }
+
 
 @media (max-width: 768px)
 {
     .nav-brand
     {
         align-self: center;
+        font-size: 36px;
+    }
+
+    .nav-menu
+    {
+        display: none;
+    }
+
+    .nav-menu.show
+    {
+        position: absolute;
+        top: 75px;
+        right:0px;
+        left: 0px;
+        background-color: #000;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+
+    .nav-menu a 
+    {
+        margin: 20px;
+        font-size: 20px;
+        border: none;
+        border-radius: 0px;
+        cursor: pointer;
+        transition: background-color .5s, color .5s, border .5s;
+    }
+
+    .nav-toggle
+    {
+        position: absolute;
+        top: 25px;
+        right:20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50px;
+        height: 50px;
+        padding: 6px;
+        border: none;
+        background-color: #CFB87C;
+        border-radius: 5px;
+        transition-duration: 0.8s;
+    }
+
+    span
+    {
+        margin: 3px;
+        height: 5px;
+        border-radius: 2px;
+        background-color: white;
+        display:block
     }
 }
