@@ -6,6 +6,13 @@ body
     align-items: center;
 }
 
+.container
+{
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
 .main-nav
 {
     background-color: black;

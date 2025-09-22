@@ -10,7 +10,7 @@
 <body>
 
     <nav class="main-nav">
-        <div class="nav-brand";>International Student and Scholar Services</div>
+        <div class="nav-brand">International Student and Scholar Services</div>
         <button class="nav-toggle" aria-label="Toggle navigation menu">
           <span></span>
           <span></span>
@@ -22,31 +22,37 @@
           <li><a href="/wa5/events.html">Events</a></li>
           <li><a href="/wa5/contact.html">Contact</a></li>
         </ul>
+    </nav>
+
+        <div class ="container">
+        <img src="https://res.cloudinary.com/simpleview/image/upload/v1494966577/clients/boulder/1_Horizontal_Athletics_Solar_Roof_Close_Hi_Res_ret_e1d77cc4-e241-4926-ad65-afa095c5eb35.jpg" alt="CU Boulder Landscape">
+        <div class ="top right">ISSS Home</div>
+        </div>
     
-<script>
-  const navToggle = document.querySelector('.nav-toggle');
-  const navMenu = document.querySelector('.nav-menu');
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-  function showMenu() 
-  {
-    var shown = navMenu.classList.toggle("show");
-    navMenu.classList.toggle("hide");
-
-    if (shown) 
+    function showMenu() 
     {
-      navToggle.setAttribute("aria-expanded", "true");
-      navToggle.style.transform = "rotate(270deg)"
-    }
-    
-    else 
-    {
-      navToggle.setAttribute("aria-expanded", "false");
-      navToggle.style.transform = "rotate(0deg)"
-    }
-  }
+      var shown = navMenu.classList.toggle("show");
+      navMenu.classList.toggle("hide");
 
-  navToggle.addEventListener("click", showMenu);
+      if (shown) 
+      {
+        navToggle.setAttribute("aria-expanded", "true");
+        navToggle.style.transform = "rotate(270deg)"
+      }
+      
+      else 
+      {
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.style.transform = "rotate(0deg)"
+      }
+    }
 
-</script>
+    navToggle.addEventListener("click", showMenu);
+
+  </script>
 </body>
 </html>
