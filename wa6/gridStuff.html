@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .parent-grid
+        {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            width: 320px;
+            grid-template-areas: 
+                "overall-nav1 course-nav1 main1"
+                "overall-nav2 course-nav2 main2"
+            ;
+        }
+
+        .box
+        {
+            border: 2px solid black;
+            height: 100px;
+            width: 100px;
+        }
+
+        #one
+        {
+            background-color: red;
+            grid-area: main2;
+            
+        }
+
+        #two
+        {
+            background-color: orange;
+            grid-area: course-nav2;
+        }
+
+        #three
+        {
+            background-color: yellow;
+            grid-area: overall-nav1;
+        }
+
+        #four
+        {
+            background-color: green;
+            grid-area: overall-nav2;
+        }
+
+        #five
+        {
+            background-color: blue;
+            grid-area: course-nav1;
+        }
+
+        #six
+        {
+            background-color: purple;
+            grid-area: main1;
+        }
+    </style>
+</head>
+<body>
+    <button><a href="/wa6/inClassActivity.html">Back to photo gallery activity</a></button>
+    <div class="parent-grid">
+        <div class="box" id="one">1</div>
+        <div class="box" id="two">2</div>
+        <div class="box" id="three">3</div>
+        <div class="box" id="four">4</div>
+        <div class="box" id="five">5</div>
+        <div class="box" id="six">6</div>
+    </div>
+
+    <h3>Click the red box for a special little message</h2>
+
+<script>
+    let box1 = document.querySelector("#one").addEventListener("click", message);
+    
+    function message()
+    {
+        alert("This is a special little message");
+    }
+</script>
+    
+</body>
+</html>
