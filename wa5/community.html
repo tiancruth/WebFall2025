@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ISSS Community</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.typekit.net/rka2goa.css">
 </head>
@@ -11,7 +11,7 @@
 
     <nav class="main-nav">
         <div class="nav-brand">International Student and Scholar Services</div>
-        <button class="nav-toggle" aria-label="Toggle navigation menu">
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
@@ -35,19 +35,18 @@
 
     function showMenu() 
     {
-      var shown = navMenu.classList.toggle("show");
-      navMenu.classList.toggle("hide");
+      const shown = navMenu.classList.toggle("show");
 
       if (shown) 
       {
         navToggle.setAttribute("aria-expanded", "true");
-        navToggle.style.transform = "rotate(270deg)"
+        navToggle.classList.add("active")
       }
       
       else 
       {
         navToggle.setAttribute("aria-expanded", "false");
-        navToggle.style.transform = "rotate(0deg)"
+        navToggle.classList.remove("active")
       }
     }
 
