@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISSS Community</title>
+    <link rel="stylesheet" href="/WebFall2025/wa7/style.css">
+</head>
+<body>
+
+    <nav class="main-nav">
+        <div class="nav-brand">International Student and Scholar Services</div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="/wa7/community.html">Home</a></li>
+          <li><a href="/wa7/resources.html">Resources</a></li>
+          <li><a href="/wa7/events.html">Events</a></li>
+          <li><a href="/wa7/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+        <div class ="container">
+        <img src="https://res.cloudinary.com/simpleview/image/upload/v1494966577/clients/boulder/1_Horizontal_Athletics_Solar_Roof_Close_Hi_Res_ret_e1d77cc4-e241-4926-ad65-afa095c5eb35.jpg" alt="CU Boulder Landscape">
+        <div class ="top right">ISSS Home</div>
+        </div>
+    
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    function showMenu() 
+    {
+      const shown = navMenu.classList.toggle("show");
+
+      if (shown) 
+      {
+        navToggle.setAttribute("aria-expanded", "true");
+        navToggle.classList.add("active")
+      }
+      
+      else 
+      {
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.classList.remove("active")
+      }
+    }
+
+    navToggle.addEventListener("click", showMenu);
+
+    // Save language choice
+    function setLanguage(lang) 
+    {
+      localStorage.setItem('userLanguage', lang);
+      // Update page content based on language
+    }
+
+    // Load on page visit
+    const userLang = localStorage.getItem('userLanguage') || 'en';
+
+  </script>
+</body>
+</html>
