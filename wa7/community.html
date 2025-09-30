@@ -52,6 +52,12 @@
     navToggle.addEventListener("click", showMenu);
 
     // Save language choice
+    let btn = document.getElementById('languageBtn').addEventListener('click', function()
+    {
+      const selectedLang = document.getElementById('languageSelect').value;
+      setLanguage(selectedLang);
+    });
+    
     function setLanguage(lang) 
     {
       localStorage.setItem('userLanguage', lang);
