@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
         .box 
         {
             height: 200px;
@@ -16,6 +17,25 @@
             animation-iteration-count: infinite; /*running as long as page is open*/
             animation-timing-function: ease-out; /* how it moves, ease-in, ease-out, linear, etc... the default is ease-in-out*/
             position: relative; /* needed for left and top to work */
+        }
+        
+        .another-box
+        {
+            height: 200px;
+            width: 200px;
+            border: 5px black solid;
+            background-color: blue;
+            transition-property: width height; /* what property you want to change */
+            transition-duration: 1s; /* how long the transition takes */
+
+        }
+
+        .another-box:hover /* when you hover over it */
+        {
+            width: 1000px;
+            height: 500px;
+            transition-duration: 2s; /* how long the transition takes */
+            transition-timing-function: ease-in-out; /* how it transitions */
         }
 
         @keyframes moving-box 
@@ -62,8 +82,7 @@
     </style>
 </head>
 <body>
-    <div class = "box">
-
-    </div>
+    <div class = "box"> </div>
+    <div class = "another-box"> </div>
 </body>
 </html>
