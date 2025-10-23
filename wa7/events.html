@@ -3,9 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISSS Community</title>
+    <title>ISSS Events</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.typekit.net/rka2goa.css">
+    <style>
+        .content 
+        {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title 
+        {
+            text-align: center;
+            margin: 2rem 0;
+            color: #333;
+        }
+
+        .carousel-container 
+        {
+            position: relative;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        /* moves left and right hopefully*/
+        .carousel-slides 
+        {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide 
+        {
+            min-width: 100%; /* each slide should be full width of container */
+            padding: 3rem;
+            box-sizing: border-box;
+        }
+
+        .carousel-slide h3 
+        {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 24px;
+        }
+
+        .carousel-slide .event-date 
+        {
+            color: #CFB87C;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .carousel-slide .event-time 
+        {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .carousel-slide p 
+        {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .carousel-button 
+        {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: background-color 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-button:hover 
+        {
+            background-color: black;
+        }
+
+        .carousel-button.prev 
+        {
+            left: 10px;
+        }
+
+        .carousel-button.next 
+        {
+            right: 10px;
+        }
+
+        .events-list 
+        {
+            margin-top: 2rem;
+        }
+
+        .event-item 
+        {
+            background-color: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px black;
+        }
+
+        .event-item h3 
+        {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-item .event-date 
+        {
+            color: #CFB87C;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-item p 
+        {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* phone bc it looks weird without this for some reason*/
+        @media (max-width: 768px) 
+        {
+            .carousel-slide 
+            {
+                padding: 2rem 1rem;
+            }
+
+            .content 
+            {
+                padding: 0 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -18,40 +159,154 @@
         </button>
         <ul class="nav-menu">
           <li><a href="/wa7/community.html">Home</a></li>
-          <li><a href="/wa7/resources.html">Resources</a></li>
+          <li><a href="/wa7/scholarships.html">Scholarships</a></li>
           <li><a href="/wa7/events.html">Events</a></li>
           <li><a href="/wa7/contact.html">Contact</a></li>
         </ul>
     </nav>
 
-        <div class ="container">
+    <div class="container">
         <img src="https://res.cloudinary.com/simpleview/image/upload/v1494966577/clients/boulder/1_Horizontal_Athletics_Solar_Roof_Close_Hi_Res_ret_e1d77cc4-e241-4926-ad65-afa095c5eb35.jpg" alt="CU Boulder Landscape">
-        <div class ="top right">ISSS Events</div>
+        <div class="top right">ISSS Events</div>
+    </div>
+
+    <div class="content">
+        
+        <h2 class="section-title">Upcoming Featured Events</h2>
+
+        <!-- Carousel for top 3 events -->
+        <div class="carousel-container">
+            <!-- Container that holds all slides -->
+            <div class="carousel-slides">
+                
+                <!-- Slide 1 -->
+                <div class="carousel-slide">
+                    <h3>International Student Welcome Reception</h3>
+                    <div class="event-date">November 5, 2025</div>
+                    <div class="event-time">5:00 PM - 7:00 PM | University Memorial Center</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Join us for an evening of networking and community building with fellow international students.</p>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <h3>Cultural Night: Celebrating Diversity</h3>
+                    <div class="event-date">November 12, 2025</div>
+                    <div class="event-time">6:00 PM - 9:00 PM | Glenn Miller Ballroom</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Experience performances, food, and traditions from around the world.</p>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-slide">
+                    <h3>Visa & Immigration Workshop</h3>
+                    <div class="event-date">November 18, 2025</div>
+                    <div class="event-time">3:00 PM - 5:00 PM | ISSS Office, Willard Hall</div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. Learn about visa regulations, work authorization, and travel tips.</p>
+                </div>
+
+            </div>
+
+            <!-- Left arrow button -->
+            <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+            
+            <!-- Right arrow button -->
+            <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+
+        <h2 class="section-title">More Upcoming Events</h2>
+
+        <!-- list of additional events -->
+        <div class="events-list">
+            
+            <div class="event-item">
+                <h3>Coffee Chat</h3>
+                <div class="event-date">November 22, 2025</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+
+            <div class="event-item">
+                <h3>Buffet</h3>
+                <div class="event-date">November 26, 2025</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+            </div>
+
+            <div class="event-item">
+                <h3>Study Abroad Fair</h3>
+                <div class="event-date">December 3, 2025</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+            </div>
+
+            <div class="event-item">
+                <h3>Holiday Celebration</h3>
+                <div class="event-date">December 10, 2025</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+            </div>
+
+            <div class="event-item">
+                <h3>Spring Semester Orientation</h3>
+                <div class="event-date">January 15, 2026</div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+            </div>
+
         </div>
-    
-  <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-menu');
 
-    function showMenu() 
-    {
-      const shown = navMenu.classList.toggle("show");
+    </div>
 
-      if (shown) 
-      {
-        navToggle.setAttribute("aria-expanded", "true");
-        navToggle.classList.add("active")
-      }
-      
-      else 
-      {
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.classList.remove("active")
-      }
-    }
+    <script>
+        // Mobile menu functionality
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
 
-    navToggle.addEventListener("click", showMenu);
+        function showMenu() {
+            const shown = navMenu.classList.toggle("show");
+            if (shown) 
+            {
+                navToggle.setAttribute("aria-expanded", "true");
+                navToggle.classList.add("active");
+            } 
+            
+            else 
+            {
+                navToggle.setAttribute("aria-expanded", "false");
+                navToggle.classList.remove("active");
+            }
+        }
 
-  </script>
+        navToggle.addEventListener("click", showMenu);
+
+        // Carousel functionality
+        let currentSlide = 0; // Keeps track of which slide we're on
+
+        // Function to move to the next or previous slide
+        function moveSlide(direction) 
+        {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.indicator');
+            const totalSlides = slides.length;
+
+            // Remove active class from current indicator
+            indicators[currentSlide].classList.remove('active');
+
+            // Calculate new slide index
+            currentSlide = currentSlide + direction;
+
+            // Loop back to start if we go past the end
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            }
+
+            // Loop to end if we go before the start
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            }
+
+            // Move the slides container to show the current slide
+            const slidesContainer = document.querySelector('.carousel-slides');
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // Add active class to new indicator
+            indicators[currentSlide].classList.add('active');
+        }
+
+    </script>
+
 </body>
 </html>
