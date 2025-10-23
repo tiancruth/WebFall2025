@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISSS Contact</title>
+    <link rel="stylesheet" href="WebFall2025/wa8/style.css">
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <nav class="main-nav">
+        <div class="nav-brand">International Student and Scholar Services</div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="/wa8/community.html">Home</a></li>
+          <li><a href="/wa8/scholarships.html">Scholarships</a></li>
+          <li><a href="/wa8/events.html">Events</a></li>
+          <li><a href="/wa8/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <img src="https://res.cloudinary.com/simpleview/image/upload/v1494966577/clients/boulder/1_Horizontal_Athletics_Solar_Roof_Close_Hi_Res_ret_e1d77cc4-e241-4926-ad65-afa095c5eb35.jpg" alt="CU Boulder Landscape">
+        <div class="top right">Contact Us</div>
+    </div>
+
+    <div class="content">
+        
+        <h1 class="page-title">Contact Us</h1>
+        <div class="contact-info">
+            <h2>ISSS Office</h2>
+
+            <div class="info-item">
+                <p>isss@colorado.edu</p>
+            </div>
+
+            <div class="info-item">
+                <p>(303) 492-8057</p>
+            </div>
+        </div>
+        
+
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        function showMenu() {
+            const shown = navMenu.classList.toggle("show");
+            if (shown) {
+                navToggle.setAttribute("aria-expanded", "true");
+                navToggle.classList.add("active");
+            } else {
+                navToggle.setAttribute("aria-expanded", "false");
+                navToggle.classList.remove("active");
+            }
+        }
+
+        navToggle.addEventListener("click", showMenu);
+    </script>
+
+</body>
+</html>

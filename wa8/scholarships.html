@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISSS Scholarships</title>
+    <link rel="stylesheet" href="WebFall2025/wa8/style.css">
+    <style>
+        .content 
+        {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .page-title 
+        {
+            text-align: center;
+            margin: 2rem 0;
+            color: #333;
+        }
+
+        .filter-section 
+        {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .filter-section h3 
+        {
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-group 
+        {
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-group label 
+        {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .checkbox-item 
+        {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .checkbox-item input[type="checkbox"] 
+        {
+            margin-right: 0.5rem;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .checkbox-item label 
+        {
+            margin: 0;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .scholarships-container 
+        {
+            margin-top: 2rem;
+        }
+
+        .scholarship-card 
+        {
+            background-color: white;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .scholarship-card h3 
+        {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        /* scholarship amount display */
+        .scholarship-card .amount 
+        {
+            color: #CFB87C;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .scholarship-card .eligibility 
+        {
+            display: inline-block;
+            color: black;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .scholarship-card p 
+        {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .scholarship-card .deadline 
+        {
+            color: #8D7334;
+            font-weight: bold;
+        }
+
+        /* message if no scholarships match filters */
+        .no-results 
+        {
+            text-align: center;
+            padding: 3rem;
+            background-color: white;
+            border-radius: 8px;
+            color: #666;
+        }
+
+        .scholarship-card.hidden 
+        {
+            display: none;
+        }
+
+        /* phoen */
+        @media (max-width: 768px) 
+        {
+            .content 
+            {
+                padding: 0 1rem;
+            }
+
+            .filter-section 
+            {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav">
+        <div class="nav-brand">International Student and Scholar Services</div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="/wa8/community.html">Home</a></li>
+          <li><a href="/wa8/scholarships.html">Scholarships</a></li>
+          <li><a href="/wa8/events.html">Events</a></li>
+          <li><a href="/wa8/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <img src="https://res.cloudinary.com/simpleview/image/upload/v1494966577/clients/boulder/1_Horizontal_Athletics_Solar_Roof_Close_Hi_Res_ret_e1d77cc4-e241-4926-ad65-afa095c5eb35.jpg" alt="CU Boulder Landscape">
+        <div class="top right">Scholarships</div>
+    </div>
+
+    <div class="content">
+        
+        <h1 class="page-title">Available Scholarships</h1>
+
+        <div class="filter-section">
+            <h3>Filter Scholarships</h3>
+
+            <!-- filter by award amount -->
+            <div class="filter-group">
+                <label>Award Amount:</label>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="over5000" onchange="filterScholarships()">
+                    <label for="over5000">Over $5,000</label>
+                </div>
+            </div>
+
+            <!-- filter by like citizenship requirement -->
+            <div class="filter-group">
+                <label>Eligibility:</label>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="nonUSCitizens" onchange="filterScholarships()">
+                    <label for="nonUSCitizens">Available to Non-US Citizens</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="scholarships-container">
+
+            <!-- scholarship 1: Over $5000, Non-US eligible -->
+            <div class="scholarship-card" data-amount="6000" data-non-us="true">
+                <h3>Leaders Scholarship</h3>
+                <div class="amount">$6,000</div>
+                <span class="eligibility">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="deadline">Deadline: December 1, 2025</p>
+            </div>
+
+            <!-- scholarship 2: Over $5000, Non-US eligible -->
+            <div class="scholarship-card" data-amount="8000" data-non-us="true">
+                <h3>International Award</h3>
+                <div class="amount">$8,000</div>
+                <span class="eligibility">Open to Non-US Citizens</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="deadline">Deadline: January 15, 2026</p>
+            </div>
+
+            <!-- scholarship 3: Under $5000, Non-US eligible -->
+            <div class="scholarship-card" data-amount="3000" data-non-us="true">
+                <h3>Cultural Scholarship</h3>
+                <div class="amount">$3,000</div>
+                <span class="eligibility">Open to Non-US Citizens</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="deadline">Deadline: November 30, 2025</p>
+            </div>
+
+            <!-- scholarship 4: Over $5000, US citizens only -->
+            <div class="scholarship-card" data-amount="7500" data-non-us="false">
+                <h3>Scholars Fund</h3>
+                <div class="amount">$7,500</div>
+                <span class="eligibility">US Citizens Only</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="deadline">Deadline: February 1, 2026</p>
+            </div>
+
+            <!-- scholarship 5: Under $5000, US citizens only -->
+            <div class="scholarship-card" data-amount="2500" data-non-us="false">
+                <h3>Residents Scholarship</h3>
+                <div class="amount">$2,500</div>
+                <span class="eligibility">US Citizens Only</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="deadline">Deadline: March 15, 2026</p>
+            </div>
+
+            <!-- scholarship 6: Over $5000, Non-US eligible -->
+            <div class="scholarship-card" data-amount="10000" data-non-us="true">
+                <h3>Dean's Scholarship</h3>
+                <div class="amount">$10,000</div>
+                <span class="eligibility">Open to Non-US Citizens</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="deadline">Deadline: December 15, 2025</p>
+            </div>
+
+            <!-- scholarship 7: Under $5000, Non-US eligible -->
+            <div class="scholarship-card" data-amount="4000" data-non-us="true">
+                <h3>First Year International Student Award</h3>
+                <div class="amount">$4,000</div>
+                <span class="eligibility">Open to Non-US Citizens</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+            <!-- if no scholarships match filters -->
+            <div class="no-results" id="noResults" style="display: none;">
+              <h3>No scholarships match your selected filters</h3>
+              <p>Try adjusting your filter selections to see more options.</p>
+            </div>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    function showMenu() 
+    {
+      const shown = navMenu.classList.toggle("show");
+      if (shown) 
+      {
+        navToggle.setAttribute("aria-expanded", "true");
+        navToggle.classList.add("active");
+      } 
+      
+      else 
+      {
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.classList.remove("active");
+      }
+    }
+
+    navToggle.addEventListener("click", showMenu);
+
+    // show the no results message if no scholarships are visible
+    const noResultsMessage = document.getElementById('noResults');
+    if (visibleCount === 0) 
+    {
+      noResultsMessage.style.display = 'block';
+    } 
+    
+    else 
+    {
+      noResultsMessage.style.display = 'none';
+    }
+  </script>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISSS Community</title>
+    <link rel="stylesheet" href="WebFall2025/wa8/style.css">
+</head>
+<style>
+  /* this is like styles specifically for the home page cards it got confusing i fear on style.css and it's like not working when i link the stylesheet for some reason idk i'm crashing out*/
+  .content 
+  {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .intro-text {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        /* grid layout for the three cards wowee */
+        .cards-grid 
+        {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Individual card styling */
+        .card 
+        {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card h2 
+        {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 24px;
+        }
+
+        .card p 
+        {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .card-button 
+        {
+            display: inline-block;
+            background-color: #CFB87C;
+            color: black;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .card-button:hover 
+        {
+            background-color: #8D7334;
+            color: white;
+        }
+
+        /* cards stack on the smaller screens */
+        @media (max-width: 768px) 
+        {
+            .cards-grid 
+            {
+                grid-template-columns: 1fr; /* single column onphone */
+            }
+
+            .content 
+            {
+                padding: 0 1rem;
+            }
+        }
+
+        /* two columns on like medium screens */
+        @media (min-width: 769px) and (max-width: 1024px) 
+        {
+            .cards-grid 
+            {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+</style>
+<body>
+
+    <nav class="main-nav">
+        <div class="nav-brand">International Student and Scholar Services</div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="/wa8/community.html">Home</a></li>
+          <li><a href="/wa8/scholarships.html">Scholarships</a></li>
+          <li><a href="/wa8/events.html">Events</a></li>
+          <li><a href="/wa8/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+      <img src="https://res.cloudinary.com/simpleview/image/upload/v1494966577/clients/boulder/1_Horizontal_Athletics_Solar_Roof_Close_Hi_Res_ret_e1d77cc4-e241-4926-ad65-afa095c5eb35.jpg" alt="CU Boulder Landscape">
+      <div class="top right">ISSS Home</div>
+  </div>
+
+  <!-- Main content area -->
+  <div class="content">
+      <div class="intro-text">
+          <h1>Welcome to ISSS Community</h1>
+      </div>
+
+      <div class="cards-grid">
+          
+          <!-- this is card 1: Scholarships -->
+          <div class="card">
+              <h2>Scholarships</h2>
+              <p>Explore scholarship opportunities available to international students.</p>
+              <a href="/wa8/scholarships.html" class="card-button">View Scholarships</a>
+          </div>
+
+          <!-- this is card 2: Events -->
+          <div class="card">
+              <h2>Events</h2>
+              <p>Stay connected with upcoming ISSS events</p>
+              <a href="/wa8/events.html" class="card-button">See Events</a>
+          </div>
+
+          <!-- this is card 3: Contact -->
+          <div class="card">
+              <h2>Contact Us</h2>
+              <p>Have questions or need assistance? Contact the ISSS team for support</p>
+              <a href="/wa8/contact.html" class="card-button">Get in Touch</a>
+          </div>
+
+      </div>
+  </div>
+  
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  function showMenu() 
+  {
+    const shown = navMenu.classList.toggle("show");
+
+    if (shown) 
+    {
+      navToggle.setAttribute("aria-expanded", "true");
+      navToggle.classList.add("active"); // turns hamburger into c hopefully
+    } 
+    
+    else 
+    {
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.classList.remove("active"); // turns x back to hamburger hopefully
+    }
+  }
+  navToggle.addEventListener("click", showMenu);
+</script>
+</body>
+</html>
