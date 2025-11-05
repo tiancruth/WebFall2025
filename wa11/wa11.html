@@ -2,11 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Feed API</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="wa11.css">
 </head>
 <body>
     <!-- API Key: 545a7c2a362e48019e1519a395295c86 -->
+    <div class="app">
+        <header>News Feed Dashboard</header>
+        
+        <div class="privacy-notice">
+            <h3>📋 Data Collection Notice!</h3>
+            <p>
+                <strong>What we collect:</strong> Your topic preference is saved locally in your browser only. 
+                No personal data is sent to external servers. The News API receives only your chosen topic category.
+            </p>
+        </div>
+
+        <div class="saved-preferences" id="saved-prefs" style="display: none;">
+            <strong>Saved Preference:</strong> <span id="saved-category"></span>
+        </div>
+
+        <section class="controls">
+            <div class="filter-group">
+                <label for="category-select">Choose News Category:</label>
+                <select id="category-select">
+                    <option value="general">General</option>
+                    <option value="technology">Technology</option>
+                    <option value="business">Business</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="health">Health</option>
+                    <option value="science">Science</option>
+                    <option value="sports">Sports</option>
+                </select>
+            </div>
+
+            <button type="button" id="fetch-news" class="button">
+                Get Latest News
+            </button>
+
+            <button type="button" id="clear-prefs" class="button clear-button">
+                Clear Saved Preferences
+            </button>
+        </section>
+
+        <section class="news-container" id="news-container">
+            <p style="text-align: center; color: #888;">Select a category and click "Get Latest News" to start</p>
+        </section>
+
+        <div class="reflection-container">
+            <div class="reflection-box">
+                <h3>Reflection</h3>
+                <p>
+                   I implemented a local data storage that users can clearly see and clear their saved preferences. The website saves the user's chosen news category in their browser's local storage. I chose this because I feel like it lets users know what data is getting saved and they have an easy way to clear it if they want to.
+                </p>
+                <br>
+                <p>
+                    This gives users more agency because it shows exactly whats being saved, you don't need an account so no personal info gets collected, and the data can be deleted instantly with a confirmation that it has been removed. The data also only stays in the browser not on like the "company" server itself. 
+                </p>
+                <br>
+                <p>
+                    I think making sure the storage was correctly implemented was a bit difficult. The saved category went away after reloading so I had to relearn how to do the storage stuff. I also wasn't sure what I needed to do with the API key itself initiallly and how that changed the code structure.
+                </p>
+
+
+            </div>
+        </div>
+    </div>
 </body>
 
 <script src="wa11.js"></script>
