@@ -1,0 +1,288 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body 
+{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #111827;
+    color: white;
+    padding: 20px;
+}
+
+.container 
+{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header 
+{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+h1 
+{
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.subtitle 
+{
+    color: #9ca3af;
+}
+
+.btn 
+{
+    background-color: #9333ea;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn:hover 
+{
+    background-color: #7e22ce;
+}
+
+.main-grid 
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+}
+
+@media (max-width: 1024px) 
+{
+    .main-grid 
+    {
+        grid-template-columns: 1fr;
+    }
+}
+
+.video-container 
+{
+    background-color: #1f2937;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.video-display 
+{
+    aspect-ratio: 9/16;
+    max-height: 600px;
+    background-color: #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.video-content 
+{
+    text-align: center;
+}
+
+.video-emoji 
+{
+    font-size: 6rem;
+    margin-bottom: 20px;
+}
+
+.video-title 
+{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.video-category 
+{
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    display: inline-block;
+}
+
+.recommendation-reason 
+{
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 0.875rem;
+}
+
+.reason-title 
+{
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.action-buttons 
+{
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.action-btn 
+{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    font-size: 28px;
+}
+
+.skip-btn 
+{
+    background-color: #374151;
+}
+
+.skip-btn:hover 
+{
+    background-color: #4b5563;
+}
+
+.like-btn 
+{
+    background-color: #dc2626;
+}
+
+.like-btn:hover 
+{
+    background-color: #ef4444;
+}
+
+.stats-panel 
+{
+    background-color: #1f2937;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.stats-title 
+{
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.stat-item 
+{
+    margin-bottom: 20px;
+}
+
+.stat-row 
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.stat-label 
+{
+    color: #9ca3af;
+}
+
+.stat-value 
+{
+    font-weight: bold;
+}
+
+.preferences-section 
+{
+    margin-top: 20px;
+}
+
+.preferences-title 
+{
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.preference-item 
+{
+    margin-bottom: 12px;
+}
+
+.reset-btn 
+{
+    width: 100%;
+    background-color: #374151;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    margin-top: 16px;
+}
+
+.reset-btn:hover 
+{
+    background-color: #4b5563;
+}
+
+.algorithm-explanation 
+{
+    margin-top: 24px;
+    background-color: #1f2937;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.explanation-grid 
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.explanation-item h4 
+{
+    color: #a78bfa;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.explanation-item p 
+{
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+.no-preferences 
+{
+    color: #9ca3af;
+    font-size: 0.875rem;
+}

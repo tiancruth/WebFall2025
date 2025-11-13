@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="wa13.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1>TikTok FYP Algorithm Simulator</h1>
+                <p class="subtitle">Interact with videos to see how the algorithm learns your preferences</p>
+            </div>
+            <button class="btn" onclick="toggleStats()">
+                <span>📊</span>
+                <span id="stats-btn-text">Show Stats</span>
+            </button>
+        </div>
+
+        <div class="main-grid">
+            <div>
+                <div class="video-container">
+                    <div class="video-display">
+                        <div class="video-content">
+                            <div class="video-emoji" id="video-emoji">🍝</div>
+                            <h2 class="video-title" id="video-title">Cooking Pasta Tutorial</h2>
+                            <span class="video-category" id="video-category">#cooking</span>
+                        </div>
+                        
+                        <div class="recommendation-reason">
+                            <div class="reason-title">Why you're seeing this:</div>
+                            <div id="reason-text">Exploring what you might like(cold start)</div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="action-btn skip-btn" onclick="handleSkip()">✕</button>
+                        <button class="action-btn like-btn" onclick="handleLike()">❤</button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="stats-panel">
+                    <h3 class="stats-title">📊 Your Profile</h3>
+                    
+                    <div class="stat-item">
+                        <div class="stat-row">
+                            <span>Videos Watched</span>
+                            <span class="stat-value" id="videos-watched">0</span>
+                        </div>
+                    </div>
+
+                    <div id="preferences-section" style="display: none;">
+                        <div class="preferences-section">
+                            <h4 class="preferences-title">Category Preferences</h4>
+                            <div id="preferences-list"></div>
+                        </div>
+                    </div>
+
+                    <button class="reset-btn" onclick="resetAlgorithm()">Reset Algorithm</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="algorithm-explanation">
+            <h3 class="stats-title">How This Algorithm Works</h3>
+            <div class="explanation-grid">
+                <div class="explanation-item">
+                    <h4>1. Track Interactions</h4>
+                    <p>your likes increase category preference significantly. Skips decrease it slightly. Watch time matters too.</p>
+                </div>
+                <div class="explanation-item">
+                    <h4>2. Score Content</h4>
+                    <p>Videos are scored based on your preferences, their natural engagement rate, and some randomness.</p>
+                </div>
+                <div class="explanation-item">
+                    <h4>3. Create Filter Bubble</h4>
+                    <p>The algorithm learns what you like and shows more of it, potentially limiting content diversity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="wa13.js"></script>
+</html>
