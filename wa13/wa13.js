@@ -1,4 +1,3 @@
-//filler video database
 const VIDEO_DATABASE = 
 [
     { 
@@ -46,7 +45,7 @@ const VIDEO_DATABASE =
     },
 
     { 
-        id: 12, title: "impractical jokers", category: "comedy", engagement: 0.85, thumbnail: "😂" 
+        id: 12, title: "impractical jokers", category: "comedy", engagement: 0.85, thumbnail: "😂"
     },
 
     { 
@@ -58,7 +57,7 @@ const VIDEO_DATABASE =
     },
 
     { 
-        id: 15, title: "judy hopps lover", category: "pets", engagement: 0.9, thumbnail: "🐰"
+        id: 15, title: "judy hopps", category: "pets", engagement: 0.9, thumbnail: "🐰" 
     },
 ];
 
@@ -73,21 +72,20 @@ let currentVideo = null;
 let feedQueue = [];
 let showStats = false;
 
-//initialize
 function init() 
 {
     generateInitialFeed();
     updateDisplay();
 }
 
-function generateInitialFeed() 
+function generateInitialFeed() //randomizes the initial feed
 {
     const shuffled = [...VIDEO_DATABASE].sort(() => Math.random() - 0.5);
     feedQueue = shuffled.slice(0, 5);
     currentVideo = feedQueue[0];
 }
 
-function calculateRecommendationScore(video) 
+function calculateRecommendationScore(video)
 {
     let score = video.engagement;
     const categoryPref = userProfile.preferences[video.category] || 0;
@@ -103,8 +101,8 @@ function getNextVideo()
         v => !remainingQueue.find(qv => qv.id === v.id) && v.id !== currentVideo.id
     );
 
-    const scoredVideos = availableVideos.map(video => (
-    {
+    const scoredVideos = availableVideos.map(video => 
+    ({
         ...video,
         score: calculateRecommendationScore(video)
     })).sort((a, b) => b.score - a.score);
@@ -116,22 +114,23 @@ function getNextVideo()
         return newQueue[0];
     }
 
+    //if no new videos are available , just return the next in the queue or the first video
     return remainingQueue[0] || VIDEO_DATABASE[0];
 }
 
-function handleLike() 
+function handleLike() //user likes video
 {
     recordInteraction('like', 100);
     moveToNextVideo();
 }
 
-function handleSkip() 
+function handleSkip() //user skips video
 {
     recordInteraction('skip', 10);
     moveToNextVideo();
 }
 
-function recordInteraction(type, watchTime) 
+function recordInteraction(type, watchTime) //records user interaction and updates preferences
 {
     const category = currentVideo.category;
     const currentPref = userProfile.preferences[category] || 0;
@@ -160,14 +159,12 @@ function moveToNextVideo()
     updateDisplay();
 }
 
-function updateDisplay() 
+function updateDisplay() //updates the UI with current video and user stats
 {
-    //video display
     document.getElementById('video-emoji').textContent = currentVideo.thumbnail;
     document.getElementById('video-title').textContent = currentVideo.title;
     document.getElementById('video-category').textContent = '#' + currentVideo.category;
 
-    //recommendation reason
     let reason;
     if (userProfile.preferences[currentVideo.category] > 0.3) 
     {
@@ -185,17 +182,15 @@ function updateDisplay()
     }
     document.getElementById('reason-text').textContent = reason;
 
-    //stats update
     document.getElementById('videos-watched').textContent = userProfile.totalVideosWatched;
 
-    //preferences if stats are showing
     if (showStats) 
     {
         updatePreferences();
     }
 }
 
-function updatePreferences() 
+function updatePreferences()
 {
     const topCategories = Object.entries(userProfile.preferences)
         .sort(([, a], [, b]) => b - a)
@@ -211,30 +206,33 @@ function updatePreferences()
                     <span style="text-transform: capitalize;">${category}</span>
                     <span>${Math.round(value * 100)}%</span>
                 </div>
-                ${value * 100}%"></div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${value * 100}%">
+                        ${value * 100 >= 15 ? Math.round(value * 100) + '%' : ''}
+                    </div>
                 </div>
             </div>
         `).join('');
     } 
     
-    else 
+    else //no preferences yet
     {
-        preferencesList.innerHTML = '<p class="no-preferences">No preferences yet. Start interacting!</p>';
+        preferencesList.innerHTML = '<p class="no-preferences">You have no preferences yet.</p>';
     }
 }
 
-function toggleStats() 
+function toggleStats() //toggles the visibility of the stats section
 {
     showStats = !showStats;
     const prefsSection = document.getElementById('preferences-section');
     const btnText = document.getElementById('stats-btn-text');
     
-    if (showStats) 
-    {
+    if (showStats) {
+
         prefsSection.style.display = 'block';
         btnText.textContent = 'Hide Stats';
         updatePreferences();
-    }
+    } 
     
     else 
     {
@@ -255,5 +253,4 @@ function resetAlgorithm()
     updateDisplay();
 }
 
-//start toktik :)
 init();
