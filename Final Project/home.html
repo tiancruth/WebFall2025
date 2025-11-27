@@ -3,39 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Home</title>
     <link rel="stylesheet" href="style.css">
 
 </head>
-    
-    <div style="text-align: center; max-width: 700px; margin: auto;"> <!--ended up wrapping everything in div because i realized i wanted everything to be centered. ignore the text-align center for everything -->
-    <nav aria-label="Main navigation">
-        <a href="./home.html">Home</a>
-        <a href="./about.html">About</a>
-        <!-- <a href="#get-involved">Get Involved</a> -->
-        <a href="./projects.html">Projects</a>
-        <a href="./contact.html">Contact</a>
-    </nav>
+<body>
+    <div class="container">
+        <nav aria-label="Main navigation">
 
-    <h1 style="text-align: center;">Tian Cowan-Ruth</h1> 
-    <!-- <p style="text-align: center;"><em>tico4800@colorado.edu</em></p> -->
-    <h2>Home</h2>
-    <p style="text-align: center;">Hi, I'm Tian and I'm a 3rd year <b>CTD Major</b> at CU Boulder with a <b>Minor in Mandarin Chinese</b>. Check out my "<a style="color: #F0939B; text-decoration: underline;" href="./about.html">About</a>" page to learn more!</p>
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation">
+                ☰
+            </button>
 
-    <img style="max-width: 500px;" src="../wa3/pics/Me.jpeg" alt="Picture of Tian Cowan-Ruth">
+            <div class="nav-links" id="navLinks">
+                <a href="./home.html">Home</a>
+                <a href="./about.html">About</a>
+                <a href="./projects.html">Projects</a>
+                <a href="./contact.html">Contact</a>
+            </div>
+        </nav>
 
+        <h1>Tian Cowan-Ruth</h1>
 
-    <!--
-    <h2>Interests</h2>
-    <p>I really like music and games. Some of my current favorite artists/albums are</p>
-    <img style="max-width: 200px;" src="https://upload.wikimedia.org/wikipedia/en/e/e0/Twin_fantasy.jpg" alt="Twin Fantasy">
-    <img style="max-width: 200px;" src="https://admin.itsnicethat.com/images/t1O94M2OsVbjPaC4aFZHOOKePvE=/69898/width-1440/598196e77fa44cb08200a23e.jpg" alt="Tyler The Creator">
-    
-    <h2>Goals</h2>
-    <p>I would love to get a job where I can travel to Taiwan and use my Chinese minor</p>
-    <h2>Contact</h2>
-    <p>You can contact me at <em>tiancowanruth@icloud.com</em></p>
-    -->
-</div> 
+        <!-- <h2>Home</h2> -->
+
+        <div class="profile-section">
+            <img src="../wa3/pics/Me.jpeg" alt="Picture of Tian Cowan-Ruth">
+            <p>Hi, I'm Tian Cowan-Ruth and I'm a 3rd year <strong>CTD Major</strong> at CU Boulder with a <strong>Minor in Mandarin Chinese</strong>. 
+        </div>
+
+        <h2>More about me</h2>
+
+        <div class="page-cards">
+            <!-- about -->
+            <div class="card">
+                <h3>About Me</h3>
+                <p>Learn about my interests in music, games, and my goals for the future.</p>
+                <a href="./about.html" class="card-button">Learn More</a>
+            </div>
+
+            <!-- projecst  -->
+            <div class="card">
+                <h3>My Projects</h3>
+                <p>Check out my college and high school projects including robotics, engineering designs, and leadership initiatives.</p>
+                <a href="./projects.html" class="card-button">View Projects</a>
+            </div>
+
+            <!-- contact me -->
+            <div class="card">
+                <h3>Get In Touch</h3>
+                <p>Connect with me through email or find me on LinkedIn, Instagram, and Spotify.</p>
+                <a href="./contact.html" class="card-button">Contact Me</a>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="portfolio.js"></script>
 </html>
