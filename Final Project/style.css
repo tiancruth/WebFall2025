@@ -79,7 +79,7 @@ nav a::after
     right: 20px;
     height: 2px;
     background-color: #F0939B;
-    transform: scaleX(0); /* makes it so it's like scaled down in the beginning */
+    transform: scaleX(0); /* makes it so it's like scaled down in the beginning and looks better*/
     transition: transform 0.3s ease;
 }
 
@@ -242,6 +242,118 @@ nav a:hover::after
     margin-bottom: 40px;
 }
 
+#themeToggle 
+{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    color: #F0939B;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#themeToggle:hover 
+{
+    border: 2px solid #F0939B;
+}
+
+/* Underline animation for theme toggle */
+#themeToggle::after 
+{
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background-color: #F0939B;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+#themeToggle:hover::after 
+{
+    transform: scaleX(1);
+}
+
+/* LIGHT MODE SETTINGS */
+body[data-theme="light"] #themeToggle
+{
+    color: #14110F; /* Dark color to contrast with light background */
+}
+
+body[data-theme="light"] #themeToggle:hover
+{
+    border: 2px solid #14110F; /* Dark border on hover */
+}
+
+body[data-theme="light"] #themeToggle::after
+{
+    background-color: #14110F; /* Dark underline */
+}
+
+body[data-theme="light"]
+{
+    background-color: #f5f5f5; /* Light background - change this! */
+    color: #14110F; /* Dark text - change this! */
+}
+
+body[data-theme="light"] p,
+body[data-theme="light"] h1,
+body[data-theme="light"] h2,
+body[data-theme="light"] h3
+{
+    color: #14110F; /* Dark text for headings - change this! */
+}
+
+body[data-theme="light"] .card,
+body[data-theme="light"] .social-card,
+body[data-theme="light"] .email-section,
+body[data-theme="light"] .about-section
+{
+    background: #e0e0e0; /* Light card background - change this! */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+body[data-theme="light"] .card p,
+body[data-theme="light"] .social-card p
+{
+    color: #14110F; /* Dark text in cards - change this! */
+}
+
+/* Light mode nav links */
+body[data-theme="light"] nav a
+{
+    color: #14110F;
+}
+
+body[data-theme="light"] nav a:visited
+{
+    color: #14110F;
+}
+
+body[data-theme="light"] nav a:hover
+{
+    border: 2px solid #14110F;
+}
+
+body[data-theme="light"] nav a::after
+{
+    background-color: #14110F;
+}
+
+/* hamburer lgiht mode*/
+body[data-theme="light"] .hamburger
+{
+    color: #14110F;
+}
+
 /* mobile thing, uses hamburger  */
 @media (max-width: 768px) 
 {
@@ -283,5 +395,14 @@ nav a:hover::after
     .social-grid 
     {
         grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    #themeToggle 
+    {
+        top: 10px;
+        right: 20px;
+        width: 70px;
+        height: 45px;
+        font-size: 12px;
     }
 }
