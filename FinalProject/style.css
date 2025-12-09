@@ -285,23 +285,23 @@ nav a:hover::after
 /* LIGHT MODE SETTINGS */
 body[data-theme="light"] #themeToggle
 {
-    color: #14110F; /* Dark color to contrast with light background */
+    color: #14110F;
 }
 
 body[data-theme="light"] #themeToggle:hover
 {
-    border: 2px solid #14110F; /* Dark border on hover */
+    border: 2px solid #14110F;
 }
 
 body[data-theme="light"] #themeToggle::after
 {
-    background-color: #14110F; /* Dark underline */
+    background-color: #14110F;
 }
 
 body[data-theme="light"]
 {
-    background-color: #f5f5f5; /* Light background - change this! */
-    color: #14110F; /* Dark text - change this! */
+    background-color: #f5f5f5;
+    color: #14110F;
 }
 
 body[data-theme="light"] p,
@@ -309,7 +309,7 @@ body[data-theme="light"] h1,
 body[data-theme="light"] h2,
 body[data-theme="light"] h3
 {
-    color: #14110F; /* Dark text for headings - change this! */
+    color: #14110F;
 }
 
 body[data-theme="light"] .card,
@@ -317,14 +317,14 @@ body[data-theme="light"] .social-card,
 body[data-theme="light"] .email-section,
 body[data-theme="light"] .about-section
 {
-    background: #e0e0e0; /* Light card background - change this! */
+    background: #e0e0e0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 body[data-theme="light"] .card p,
 body[data-theme="light"] .social-card p
 {
-    color: #14110F; /* Dark text in cards - change this! */
+    color: #14110F;
 }
 
 /* Light mode nav links */
@@ -384,7 +384,7 @@ body[data-theme="light"] .hamburger
 
     .page-cards 
     {
-        grid-template-columns: 1fr; /* Single column on mobile */
+        grid-template-columns: 1fr;
     }
 
     .profile-section img 
@@ -394,7 +394,7 @@ body[data-theme="light"] .hamburger
 
     .social-grid 
     {
-        grid-template-columns: 1fr; /* Single column on mobile */
+        grid-template-columns: 1fr;
     }
 
     #themeToggle 
